@@ -141,6 +141,18 @@
             margin-bottom: 20px;
         }
 
+        /* Gaya untuk Logo Baru */
+        #hero-logo {
+            max-height: 150px; /* Ukuran tinggi maksimum agar tidak terlalu besar */
+            width: auto; /* Biarkan lebar menyesuaikan secara proporsional */
+            display: block; /* Membantu penempatan */
+            margin-left: auto; /* Rata tengah horizontal */
+            margin-right: auto; /* Rata tengah horizontal */
+            margin-bottom: 20px; /* Jarak antara logo dan tagline */
+            object-fit: contain; /* Memastikan gambar tidak terpotong */
+            z-index: 10; /* Pastikan berada di atas overlay */
+        }
+
         .hero p {
             font-size: 1rem;
             line-height: 1.6;
@@ -293,6 +305,7 @@
             /* Nanti ganti tulisan di bawah dengan link gambar efek air Anda */
             background-image: url('https://i.imgur.com/7DjJBj4.png'); 
             background-size: cover;
+            background-repeat: no-repeat;
             background-position: center;
             z-index: 0;
             pointer-events: none; /* Agar gambar tidak menghalangi klik */
@@ -363,7 +376,7 @@
         <div class="parallax-bg" id="parallax-bg"></div>
         <div class="parallax-overlay"></div>
         <div class="hero-content fade-in">
-            <h1>PON</h1>
+            <img id="hero-logo" src="LINK_GAMBAR_LOGO_ANDA_DI_SINI" alt="Logo PON Pioneer Outpost Nusa">
             <h2>Journey to new frontiers, Journey to Noto Nature Park.</h2>
             <p>Pioneer Outpost Nusa (PON) adalah game petualangan prasejarah di mana insting bertahan hidup berpadu dengan penemuan. Jelajahi dunia luas yang dipenuhi makhluk kuno, berburu dinosaurus, bentuk suku, dan ukir takdirmu di alam liar.</p>
             <button class="btn-start">Start the journey</button>
