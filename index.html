@@ -262,24 +262,40 @@
             transform: translateY(0);
         }
 
-        /* --- RESPONSIVE --- */
-        /* --- TAMBAHKAN INI DI BAGIAN PALING BAWAH CSS (RESPONSIVE MOBILE) --- */
+        /* --- RESPONSIVE MOBILE (DIPERBAIKI) --- */
         @media (max-width: 768px) {
+            /* 1. Mengembalikan ruang tinggi agar konten tidak terpotong (overflow) */
             .hero {
-                /* Di layar HP, kita buat tingginya lebih pendek (misal 55vh) */
-                /* Ini memaksa gambar cover menjadi lebih 'lebar' dan terlihat semua */
                 min-height: 100vh; 
                 padding: 100px 20px 40px 20px;
                 justify-content: center;
             }
-    
-            .hero-logo {
-                font-size: 4rem; /* Mengecilkan teks PON di HP agar muat */
+
+            /* 2. Mengecilkan gambar Logo PON khusus untuk layar HP */
+            #hero-logo {
+                max-height: 120px; /* Ukuran ini jauh lebih pas untuk HP */
+                max-width: 90%; 
+                margin-bottom: 15px; /* Mengurangi jarak ke teks di bawahnya */
             }
-    
+
+            /* 3. Mengecilkan teks Tagline (H2) */
+            .hero h2 {
+                font-size: 1.2rem; 
+                margin-bottom: 10px;
+            }
+
+            /* 4. Mengecilkan teks Deskripsi agar tidak memenuhi layar */
             .hero p {
-                font-size: 0.9rem; /* Mengecilkan deskripsi sedikit di HP */
+                font-size: 0.85rem; 
+                line-height: 1.5; /* Merapatkan spasi antar baris */
+                margin-bottom: 20px; 
+                padding: 0 10px; /* Memberi ruang di kiri dan kanan teks */
             }
+
+            /* 5. Mempertahankan fitur yang sudah ada sebelumnya */
+            .nav-links { display: none; } /* Menyembunyikan menu */
+            .section, .section.reverse { flex-direction: column; padding: 50px 5%; }
+            .image-content { width: 100%; height: 300px; }
         }
         
         @media (max-width: 768px) {
